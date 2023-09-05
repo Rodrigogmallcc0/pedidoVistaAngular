@@ -14,7 +14,7 @@ RUN npm install -g @angular/cli@16.1.4
 RUN npm install
 
 # Compilar la aplicación Angular para producción
-RUN ng build --prod
+RUN ng build --configuration=production
 
 # Etapa de producción
 FROM nginx:latest
