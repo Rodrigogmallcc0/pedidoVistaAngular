@@ -4,17 +4,14 @@ FROM node:16 AS build
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copiar package.json y package-lock.json al directorio de trabajo
-COPY package*.json ./
+# Copiar los archivos de la aplicación Angular al contenedor
+COPY . .
 
 # Instalar Angular CLI globalmente
 RUN npm install -g @angular/cli@16.1.4
 
 # Instalar las dependencias del proyecto
 RUN npm install
-
-# Copiar el resto del código de la aplicación al directorio de trabajo
-COPY . .
 
 # Compilar la aplicación Angular para producción
 RUN ng build --prod
