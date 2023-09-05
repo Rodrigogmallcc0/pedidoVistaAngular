@@ -23,7 +23,7 @@ FROM nginx:latest
 COPY --from=build /app/dist/pedido /usr/share/nginx/html
 
 # Exponer el puerto 80 (puerto predeterminado para el tráfico HTTP)
-EXPOSE 80
+EXPOSE 4200
 
 # Iniciar Nginx para servir la aplicación Angular
 CMD ["nginx", "-g", "daemon off;"]
