@@ -15,8 +15,8 @@ export class PedidoServiceService {
 
   constructor( private httpClient: HttpClient) { }
 
-  getAllProducto(): Observable<ProductoModel[]> {
-    return this.httpClient.get<ProductoModel[]>(`${this.baseUrl}${this.path}/listar`);
+  getAllProducto(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}${this.path}/listar`);
   }
 
   saveProducto(request: any):Observable<any>  {

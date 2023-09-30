@@ -29,10 +29,8 @@ export class PedidoComponent implements OnInit{
     });
   }
   list(){
-    return this.productoService.getAllProducto().subscribe(resp=>{
-      if(resp){
-        this.listProducto=resp;
-      }
+    return this.productoService.getAllProducto().subscribe(data=>{
+      this.listProducto = data.body;
     })
   }
 

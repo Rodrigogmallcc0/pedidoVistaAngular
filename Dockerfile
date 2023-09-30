@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Instalar Angular CLI globalmente
-RUN npm install -g @angular/cli@16.1.4
+RUN npm install -g @angular/cli
 
 # Instalar las dependencias del proyecto
 RUN npm install
@@ -23,7 +23,7 @@ FROM nginx:latest
 COPY --from=build /app/dist/pedido /usr/share/nginx/html
 
 # Exponer el puerto 80 (puerto predeterminado para el tráfico HTTP)
-EXPOSE 4200
+EXPOSE 80
 
 # Iniciar Nginx para servir la aplicación Angular
 CMD ["nginx", "-g", "daemon off;"]
